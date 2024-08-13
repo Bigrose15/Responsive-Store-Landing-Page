@@ -1,0 +1,113 @@
+.row .cardholderimgandtext img {
+  height: 5em;
+  width: 5em;
+  margin-right: 0px;
+}
+
+.row .cardholderimgandtext:hover {
+  transform: scale(1.1); /*scale(1.1) increases the scale on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* It adds shadow on hover */
+  cursor: pointer; /* it changes the mouse pointer to cursor on hover */
+}
+
+@media (max-width: 425px) {
+  .cardholderimgandtext .item {
+    font-size: 70%;
+  }
+}
+
+/*
+From the above media query, it implies that when the screen width is 425px or less.
+
+-1) .cardholderimgandtext .item { ... }
+This is the selector for the elements that will be affected by the styles.
+-2).cardholderimgandtext is a class that targets a container element.
+-3).item is main targets elements inside the .cardholderimgandtext container.
+-4) font-size: 70%; sets the font size of the selected elements to 70% of their original size, which will happen on screens with a maximum width of 425px (e.g., mobile devices).
+
+The main reason of the @media query above is that helps targets elements with the class item inside containers with the class cardholderimgandtext and reduces the font size of these elements to 70% of their original size on screens below 425px.
+ */
+
+@media (max-width: 425px) {
+  .cardholderimgandtext .pricetag {
+    font-size: 70%;
+  }
+}
+
+.card:hover {
+  transform: scale(1.1); /*scale(1.1) increases the scale on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* It adds shadow on hover 
+  0px 0px sets the horizontal and vertical offset of the shadow to 0 pixels.
+20px sets the blur radius of the shadow to 20 pixels.
+rgba(0, 0, 0, 0.5) sets the color of the shadow to black with an opacity of 0.5 (50%)*/
+  cursor: pointer; /* it changes the mouse pointer to cursor on hover */
+}
+
+#carouselExampleSlidesOnly .carousel-inner img {
+  height: 296px; /* I customized the height and width of the images to be same bcos the images are of different ratio*/
+  width: 164.44px;
+  border-radius: 7px;
+}
+
+#carouselExampleSlidesOnly .carousel-inner img:hover {
+  animation: spin 2s ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  20% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+/* This @keyframes is used for animation, the element is the #carouselExampleSlideonly .carousel-inner img, but what the keyframe is pointing in terms of animation is the keyword "spin" */
+/* 1. #carouselExampleCaptions .carousel-inner img is the selector for the element to animate.
+-2. animation property applies the spin animation to the element.
+-3. 2s sets the animation duration to 2 seconds.
+-4. ease-in-out sets the timing function for a smooth animation.
+-4.20% { ... } Specifies a keyframe at the 20% mark of the animation duration.
+-5.transform: scale(1) rotate(0deg); sets the transformation at this keyframe:
+-6 scale(1) means the element will be scaled to its original size (no scaling).
+-7 rotate(0deg) means the element will not be rotated.
+
+-8 100% { ... } Specifies a keyframe at the 100% mark (the end) of the animation duration.
+-9. transform: scale(1.1) rotate(5deg); sets the transformation at this keyframe:
+-10. scale(1.1) means the element will be scaled up to 110% of its original size.
+    - rotate(5deg) means the element will be rotated 5 degrees clockwise.*/
+
+#carouselExampleCaptions .carousel-inner img {
+  height: 296px; /* I customized the height and width of the images to be same bcos the images are of different ratio*/
+  width: 164.44px;
+  border-radius: 7px;
+}
+
+#carouselExampleCaptions .carousel-inner img {
+  cursor: pointer;
+  animation: mymove 2s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes mymove {
+  10% {
+    left: 5px;
+  }
+  0% {
+    right: 0px;
+  }
+  0% {
+    left: 0px;
+  }
+  10% {
+    right: 2px;
+  }
+}
+/* This @keyframes is used for animation, the element is the #carouselExampleCaptions .carousel-inner img, but what the keyframe is pointing in terms of animation is the keyword "mymove" */
+/* 1. #carouselExampleCaptions .carousel-inner img is the selector for the element to animate.
+-2. animation property applies the mymove animation to the element.
+-3. 2s sets the animation duration to 2 seconds.
+-4. ease-in-out sets the timing function for a smooth animation.
+5. infinite makes the animation repeat indefinitely.
+6. position: relative is necessary for the top property to work */
